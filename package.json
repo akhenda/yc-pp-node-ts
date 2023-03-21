@@ -1,6 +1,6 @@
 {
   "name": "node-typescript-jest-boilerplate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "NodeJS typescript + jest boilerplate",
   "author": "Brian Schlenker <bschlenk@umich.edu>",
   "license": "MIT",

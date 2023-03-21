@@ -1,0 +1,30 @@
+name: Build
+
+on: workflow_call # allow this workflow to be called from other workflows
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Build Node.js
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 🏗 Install PNPM packager
+        uses: pnpm/action-setup@v2
+
+      - name: 🏗 Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: 📦 PNPM install
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗 Build
+        run: pnpm run build

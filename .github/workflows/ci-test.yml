@@ -1,0 +1,34 @@
+name: Test
+
+on: workflow_call # allow this workflow to be called from other workflows
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Run Jest and Generate Coverage
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 🏗 Install PNPM packager
+        uses: pnpm/action-setup@v2
+
+      - name: 🏗 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - name: 📦 PNPM install
+        run: pnpm install --frozen-lockfile
+
+      - name: ✅ Run Tests and Generate Coverage Annotations
+        uses: mattallty/jest-github-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          test-command: pnpm run test:ci
+          coverage-comment: false
+
+      - name: 📔 Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@main

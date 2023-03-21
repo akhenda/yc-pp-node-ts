@@ -1,0 +1,35 @@
+name: Lint
+
+on: workflow_call
+
+# Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  lint:
+    name: Run Linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 🏗 Install PNPM packager
+        uses: pnpm/action-setup@v2
+
+      - name: 🏗 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - name: 📦 PNPM install
+        run: pnpm install --frozen-lockfile
+
+      - name: 🐛 Linting
+        uses: wearerequired/lint-action@v2
+        with:
+          tsc: true
+          eslint: true
+          prettier: true

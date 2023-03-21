@@ -22,6 +22,9 @@ jobs:
       - name: 📦 PNPM install
         run: pnpm install --frozen-lockfile
 
+      - name: ✅ Run Jest
+        run: pnpm run test:ci
+
       - name: 📔 Generating coverage badges
         uses: jpb06/jest-badges-action@latest
         if: github.event_name != 'pull_request'

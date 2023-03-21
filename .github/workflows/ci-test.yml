@@ -5,7 +5,7 @@ on: workflow_call # allow this workflow to be called from other workflows
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Run Jest and Generate Coverage
+    name: Run Tests
     steps:
       - name: Checkout
         uses: actions/checkout@v3

@@ -5,7 +5,7 @@ on: workflow_call
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Build Node.js
+    name: Final Jobs
     steps:
       - name: Checkout
         uses: actions/checkout@v3

@@ -7,6 +7,7 @@ describe('hello', () => {
 
       expect(message).toEqual('Hello world!');
 
+      // TODO(@akhenda): remove this useless assertion
       // confirm jest-extended matchers work
       expect(true).toBeTrue();
     });

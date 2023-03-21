@@ -1,12 +1,19 @@
 {
+  "extends": "eslint-config-heimdall/tsconfig.base",
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2017",
+    "target": "ESNext",
     "strict": true,
     "sourceMap": true,
     "declaration": true,
     "resolveJsonModule": true,
-    "outDir": "./dist"
-  },
-  "include": ["src"]
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@config/*": ["src/config/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "noErrorTruncation": true
+  }
 }

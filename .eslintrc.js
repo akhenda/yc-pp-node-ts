@@ -1,8 +1,5 @@
-'use strict';
-
 module.exports = {
   root: true,
-
   plugins: ['@typescript-eslint'],
   parser: '@typescript-eslint/parser',
 
@@ -14,27 +11,17 @@ module.exports = {
   },
 
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
 
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'prettier',
-  ],
+  extends: ['heimdall/node', 'heimdall/tests'],
 
-  rules: {
-    'arrow-body-style': ['error', 'as-needed'],
-    'prefer-arrow-callback': ['error'],
-    '@typescript-eslint/array-type': ['error', { default: 'array' }],
-    '@typescript-eslint/no-use-before-define': [
-      'error',
-      { functions: false, classes: false },
-    ],
-  },
+  overrides: [],
+
+  settings: {},
+
+  rules: {},
 };

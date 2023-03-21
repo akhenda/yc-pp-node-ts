@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src", "changelog.config.js", "commitlint.config.js"]
+}

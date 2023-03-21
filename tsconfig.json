@@ -15,5 +15,7 @@
       "@utils/*": ["src/utils/*"]
     },
     "noErrorTruncation": true
-  }
+  },
+  "files": ["global.d.ts"],
+  "include": ["src/**/*.ts"]
 }

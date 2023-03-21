@@ -20,7 +20,7 @@
     "typescript",
     "jest"
   ],
-  "repository": "bschlenk/node-typescript-jest-boilerplate",
+  "repository": "akhenda/yc-node-ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

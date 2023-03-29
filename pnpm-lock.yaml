@@ -7,7 +7,7 @@ specifiers:
   '@semantic-release/git': ^10.0.1
   '@semantic-release/github': ^8.0.7
   '@semantic-release/npm': ^9.0.2
-  '@types/eslint': 8.21.3
+  '@types/eslint': 8.37.0
   '@types/jest': 29.5.0
   '@types/node': 18.15.11
   '@typescript-eslint/eslint-plugin': 5.57.0
@@ -38,7 +38,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@20.1.3
   '@semantic-release/github': 8.0.7_semantic-release@20.1.3
   '@semantic-release/npm': 9.0.2_semantic-release@20.1.3
-  '@types/eslint': 8.21.3
+  '@types/eslint': 8.37.0
   '@types/jest': 29.5.0
   '@types/node': 18.15.11
   '@typescript-eslint/eslint-plugin': 5.57.0_x4rubgibnu7ujqspfqdeho4yiu
@@ -1275,8 +1275,8 @@ packages:
       '@babel/types': 7.21.3
     dev: true
 
-  /@types/eslint/8.21.3:
-    resolution: {integrity: sha512-fa7GkppZVEByMWGbTtE5MbmXWJTVbrjjaS8K6uQj+XtuuUv1fsuPAxhygfqLmsb/Ufb3CV8deFCpiMfAgi00Sw==}
+  /@types/eslint/8.37.0:
+    resolution: {integrity: sha512-Piet7dG2JBuDIfohBngQ3rCt7MgO9xCO4xIMKxBThCq5PNRB91IjlJ10eJVwfoNtvTErmxLzwBZ7rHZtbOMmFQ==}
     dependencies:
       '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
